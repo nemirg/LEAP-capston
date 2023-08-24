@@ -1,0 +1,33 @@
+<body>
+    <h1> All Customers </h1>
+
+
+    <select [(ngModel)]="salesperson" class="form-control form-select-lg">
+        <option disabled selected value=""> Choose a sales person</option>
+        <option value="Cindy"> Cindy </option>
+        <option value="Steve">Steve </option>
+    </select>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"> Id</th>
+                <th scope="col"> FName </th>
+                <th scope="col"> LName </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Phone </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers | filterBySalesperson: salesperson | sortByTotal ">
+                <th scope="row"> {{customer.id}} </th>
+                <td> {{customer.first_name}} </td>
+                <td> {{customer.last_name}} </td>
+                <td> {{customer.email}} </td>
+                <td> {{customer.phone}} </td>
+            </tr>
+        </tbody>
+
+
+    </table>
+</body>

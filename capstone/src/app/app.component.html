@@ -1,0 +1,7 @@
+<nav>
+  <a [routerLink]="'home'" [routerLinkActive]="'active'"> Home </a>
+  <a [routerLink]="'customer'" [routerLinkActive]="'active'"> Customer </a>
+  <a [routerLink]="'account'" [routerLinkActive]="'active'"> User: {{this.loginSrv.user}} </a>
+</nav>
+
+<router-outlet></router-outlet>

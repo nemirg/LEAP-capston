@@ -1,0 +1,26 @@
+<body>
+
+    <h1> Account </h1>
+
+    <p> Currently logged in as <b>{{this.loginSrv.user}}</b></p>
+
+    <div *ngIf="this.isLoggedIn; else loggedOut">
+        <button class="btn btn-primary" (click)="logout()">Logout</button>
+    </div>
+
+    <ng-template #loggedOut>
+
+        <div>
+
+            <p>Enter credentials here: </p>
+            <form class="form-group">
+                <label for="user"> Username </label>
+                <input class="form-control" name="user" id="user" [(ngModel)]="user" />
+                <label for="password"> Password </label>
+                <input class="form-control" name="password" id="password" type="password" [(ngModel)]="pass" />
+                <button class="btn btn-primary" type="submit" (click)="login()"> Login </button>
+            </form>
+        </div>
+    </ng-template>
+
+</body>

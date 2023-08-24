@@ -1,0 +1,10 @@
+<div *ngIf="!this.loginSrv.isLoggedIn; else loggedIn"></div>
+
+<ng-template #loggedIn>
+    <nav>
+        <a [routerLink]="'/customer/customer-list'" [routerLinkActive]="'active'"> Customer List</a>
+        <a [routerLink]="'/customer/my-accounts'" [routerLinkActive]="'active'"> My Accounts</a>
+    </nav>
+</ng-template>
+
+<router-outlet></router-outlet>

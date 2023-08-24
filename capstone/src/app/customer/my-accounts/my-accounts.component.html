@@ -1,0 +1,39 @@
+<body>
+
+    <h1> My Accounts </h1>
+
+    <h2>
+        Salesperson: {{this.user}}
+    </h2>
+    <h2>
+        Sales Total: {{this.customers | filterBySalesperson: user | getTotalSales | currency }}
+    </h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"> Id</th>
+                <th scope="col"> FName </th>
+                <th scope="col"> LName </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Phone </th>
+                <th scope="col"> Purchase Total </th>
+                <th scope="col"> salesperson </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers | filterBySalesperson: user">
+                <th scope="row"> {{customer.id}} </th>
+                <td> {{customer.first_name}} </td>
+                <td> {{customer.last_name}} </td>
+                <td> {{customer.email}} </td>
+                <td> {{customer.phone}} </td>
+                <td> {{customer.purchase_total| currency}}</td>
+                <td> {{customer.salesperson}} </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</body>
